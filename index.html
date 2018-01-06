@@ -35,10 +35,9 @@ function runSpeechRelatedCode() {
     };
 
     document.getElementById("start").onclick = function() {
-        speechRs.rec_start('en-IN', function(final_transcript, interim_transcript,prev_res) {
+        speechRs.rec_start('en-IN', function(final_transcript, interim_transcript) {
             document.getElementById("e").innerHTML = final_transcript + interim_transcript;
             document.getElementById("e").style.color =interim_transcript;
-            console.log(final_transcript + interim_transcript+prev_res);
         });
 
         speechRs.on("I am fine", function() {
