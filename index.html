@@ -13,7 +13,7 @@ el.innerHTML=(el.innerHTML).replace(ar[j],"<span class='rsClass'>"+ar[j]+"</span
 speechRs.rec_start=function(l,callback){this.recognition=new webkitSpeechRecognition();this.recognition.continuous=true;this.recognition.interimResults=true;this.arry_com={};this.final_transcript='';this.recognition.lang=l;this.recognition.start();this.ignore_onend=false;this.recognition.onstart=function(c){}
 let prev_res='';this.recognition.onresult=function(event){let interim_transcript='';if(typeof(event.results)=='undefined'){speechRs.recognition.onend=null;speechRs.recognition.stop();return;}
 for(var i=event.resultIndex;i<event.results.length;++i){if(event.results[i].isFinal){prev_res='';speechRs.final_transcript+=event.results[i][0].transcript;}else{interim_transcript+=event.results[i][0].transcript;}}
-console.log(prev_res+","+interim_transcript);if(prev_res!=interim_transcript&&speechRs.arry_com[interim_transcript.toLowerCase().trim()]){prev_res=interim_transcript;speechRs.arry_com[interim_transcript.toLowerCase().trim()]();}else{}
+/*console.log(prev_res+","+interim_transcript);*/if(prev_res!=interim_transcript&&speechRs.arry_com[interim_transcript.toLowerCase().trim()]){prev_res=interim_transcript;speechRs.arry_com[interim_transcript.toLowerCase().trim()]();}else{}
 callback(speechRs.final_transcript.replace("undefined",""),interim_transcript);}}
 speechRs.on=function(s,f){this.arry_com[s.toLowerCase()]=f;}
 speechRs.rec_stop=function(callback){this.recognition.stop();this.recognition.onstop=function(){return callback();}}
