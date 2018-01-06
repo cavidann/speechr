@@ -37,6 +37,7 @@ function runSpeechRelatedCode() {
     document.getElementById("start").onclick = function() {
         speechRs.rec_start('en-IN', function(final_transcript, interim_transcript) {
             document.getElementById("e").innerHTML = final_transcript + interim_transcript;
+            console.log(interim_transcript);
         });
 
         speechRs.on("I am fine", function() {
