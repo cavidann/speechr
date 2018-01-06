@@ -93,6 +93,7 @@
 
             document.getElementById("speak").onclick = function () {
                 speechRs.speak("Heyy how its going", function () { }, false);
+                speechRs.rec_stop();
             };
 
             document.getElementById("start").onclick = function () {
