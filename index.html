@@ -99,7 +99,7 @@
             document.getElementById("start").onclick = function () {
                 speechRs.rec_start('en-IN', function (final_transcript, interim_transcript) {
                     document.getElementById("e").innerHTML = final_transcript + interim_transcript;
-                    speechRs.rec_stop();
+                    
                 });
 
                 speechRs.on("I am fine", function () {
