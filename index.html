@@ -93,13 +93,11 @@
 
             document.getElementById("speak").onclick = function () {
                 speechRs.speak("Heyy how its going", function () { }, false);
-                
             };
 
             document.getElementById("start").onclick = function () {
                 speechRs.rec_start('en-IN', function (final_transcript, interim_transcript) {
                     document.getElementById("e").innerHTML = final_transcript + interim_transcript;
-                    
                 });
 
                 speechRs.on("I am fine", function () {
